@@ -1,11 +1,60 @@
+/* definir la police pour le site */
 @font-face {
     font-family: "Avenir";
     src:  url("./fonts/Avenir-Roman-12.woff") format("woff");
    }
+/* animation pour le bouton V */
+@keyframes down {
+    0%{
+        transform: translate(0, 0)    ;
+        -webkit-transform: translate(0, 0)    ;
+        -moz-transform: translate(0, 0)    ;
+        -ms-transform: translate(0, 0)    ;
+        -o-transform: translate(0, 0)    ;
+}
+25%{
+    transform: translate(0, 9px)    ;
+    -webkit-transform: translate(0, 9px)    ;
+    -moz-transform: translate(0, 9px)    ;
+    -ms-transform: translate(0, 9px)    ;
+    -o-transform: translate(0, 9px)    ;
+}
+50%{
+    transform: translate(0, 5px)    ;
+    -webkit-transform: translate(0, 5px)    ;
+    -moz-transform: translate(0, 5px)    ;
+    -ms-transform: translate(0, 5px)    ;
+    -o-transform: translate(0, 5px)    ;
+}
+75%{
+    transform: translate(0, 9px)    ;
+    -webkit-transform: translate(0, 9px)    ;
+    -moz-transform: translate(0, 9px)    ;
+    -ms-transform: translate(0, 9px)    ;
+    -o-transform: translate(0, 9px)    ;
+}
+90%{
+    transform: translate(0, 5px)    ;
+    -webkit-transform: translate(0, 5px)    ;
+    -moz-transform: translate(0, 5px)    ;
+    -ms-transform: translate(0, 5px)    ;
+    -o-transform: translate(0, 5px)    ;
+}
+100%{
+    transform: translate(0,0);
+    -webkit-transform: translate(0,0);
+    -moz-transform: translate(0,0);
+    -ms-transform: translate(0,0);
+    -o-transform: translate(0,0);
+}
+
+}
+
+/* style du body */
 
 body{
     margin: 0;
-    padding:0 50px;
+    padding:0;
     box-sizing: border-box;
     background: #040714;
     font-family: "Avenir";
@@ -13,15 +62,63 @@ body{
     
 }
 
+/* mise en place de l'image d'arriere plan du header */
 header{
     background-image: url("./assets/olp_hero_desktop_UKI_FR.jpg");
-    background-size: 100% 100%;
-
-
+    background-size: 100% auto;
+    width: 100%;
+    
 }
+/* style du logo et bouton qui apparaissent en scrollant */
+.hidden {
+    width: 7em;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    
+    transition: opacity 1s;
+    -webkit-transition: opacity 1s;
+    -moz-transition: opacity 1s;
+    -ms-transition: opacity 1s;
+    -o-transition: opacity 1s;
+    display:none;
+}
+
+
+#hidden-btn{
+    opacity: 1;
+    position: fixed;
+    top:10px;
+    right: 150px;
+    height: 2.8em;
+    color: white;
+    border:none;
+    border-radius: 3px;
+    font-size: 14px;
+    background-color: #0072d2;
+    padding: 5px 15px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    
+    transition: opacity 1s;
+    display: none;
+}
+#hidden-btn:hover{
+    background-color:#1c86dd;
+    cursor: pointer;
+}
+/* style du boutton s'identifier et son conteneur */
 #top-btn{
     width: 100%;
     height: 100px;
+    position: fixed;
+    transition: background-color 2s;
+    -webkit-transition: background-color 2s;
+    -moz-transition: background-color 2s;
+    -ms-transition: background-color 2s;
+    -o-transition: background-color 2s;
 }
 #first-btn{
     background-color:black;
@@ -39,7 +136,116 @@ header{
     -ms-border-radius: 3px;
     -o-border-radius: 3px;
 }
+#first-btn:hover {
+    color: black;
+    background-color: white;
+    opacity: .9;
+    cursor: pointer;
+}
+/* style du logo */
 #logo{
-    width: 100px;
+    width: 10em;
+    margin-left: 50px;
     
+}
+/* style des bloc contenant les offres */
+#top{
+    display:flex;
+    justify-content: flex-start;
+    width: 50%;
+    margin-left: 50px;
+    
+}
+#top  h3{
+    font-size: 24px;
+    line-height: 1.2;
+}
+ h1{
+    margin-left: 50px;
+}
+#top span, p{
+    line-height: normal;
+    font-size: 14px;
+    opacity: .5;
+}
+#top button{
+    width:17em;
+    height: 3.2em;
+    color: white;
+    border:none;
+    border-radius: 3px;
+    font-size: 18px;
+    background-color: #0072d2;
+    padding: 5px 15px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+}
+
+#top button:hover{
+    background-color:#1c86dd;
+    cursor: pointer;
+}
+
+#top-1 , #top-2{
+    margin: 5px 15px;
+}
+#condition{
+    width: 50%;
+    font-size: 11px;
+    margin-left: 50px;
+}
+/* insertion de la bande de logos */
+#logos{
+    background-image: url('./assets/disney-franchise-logos.png');
+    background-size: 50% auto;
+    background-repeat: no-repeat;
+    padding:  10px 50px 10px 50px;
+    margin-top: 90px;
+    width: calc(100%-100px);
+    display: flex;
+    justify-content: right;
+    margin-left: 50px;
+    
+}
+#logos img{
+    width: 150%;
+    animation-name: down;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+
+}
+#logos img:hover{
+    cursor: pointer;
+}
+/* style du main */
+.dual{
+    display: flex;
+    margin: 50px 10px 10px 10px;
+}
+.dual div {
+    width: 49%;
+}
+.dual div img{
+    width: 100%;
+    height: auto;
+}
+.dual h2{
+    margin: 0 0 24px;
+    font-size: 34px;
+    line-height: 1.2;
+}
+.dual p{
+    margin: 0 0 24px;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.column{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding:0 50px;
 }
