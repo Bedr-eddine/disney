@@ -75,7 +75,7 @@ header{
     position: fixed;
     top: 10px;
     left: 10px;
-    
+    width: 80px;
     transition: opacity 1s;
     -webkit-transition: opacity 1s;
     -moz-transition: opacity 1s;
@@ -89,12 +89,13 @@ header{
     opacity: 1;
     position: fixed;
     top:10px;
-    right: 150px;
+    right: 180px;
     height: 2.8em;
     color: white;
     border:none;
     border-radius: 3px;
-    font-size: 14px;
+    font-size: 15px;
+    letter-spacing: 1.5px;
     background-color: #0072d2;
     padding: 5px 15px;
     -webkit-border-radius: 3px;
@@ -112,7 +113,7 @@ header{
 /* style du boutton s'identifier et son conteneur */
 #top-btn{
     width: 100%;
-    height: 100px;
+    height: 60px;
     position: fixed;
     transition: background-color 2s;
     -webkit-transition: background-color 2s;
@@ -123,7 +124,8 @@ header{
 #first-btn{
     background-color:black;
     opacity: .7;
-    font-size: 14px;
+    font-size: 15px;
+    letter-spacing: 1.5px;
     color: white;
     padding: 10px 20px;
     position: fixed;
@@ -153,6 +155,7 @@ header{
     display:flex;
     justify-content: flex-start;
     width: 50%;
+    
     margin-left: 50px;
     
 }
@@ -176,13 +179,21 @@ header{
     border-radius: 3px;
     font-size: 18px;
     background-color: #0072d2;
-    padding: 5px 15px;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     -ms-border-radius: 3px;
     -o-border-radius: 3px;
 }
-
+.separator{
+    height: .5px;
+    width: 100%;
+    border: .5px white solid;
+    background-color: white;
+    opacity: .5;
+    margin-top: 20px;
+    display: none;
+    
+}
 #top button:hover{
     background-color:#1c86dd;
     cursor: pointer;
@@ -248,4 +259,183 @@ header{
     flex-direction: column;
     justify-content: center;
     padding:0 50px;
+}
+
+/* style de la partie accessibilité */
+.media-title{
+    font-size: 34px;
+    text-align: center;
+    margin: 100px 0 24px;
+}
+.media-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+.media{
+    width: 24%;
+    height: auto;
+}
+.medium img{
+    width: 100%;
+    height: auto;
+}
+.media h3, .media p{
+    text-align: center;
+}
+
+/* style du footer */
+footer{
+    margin: 100px 50px 40px;
+}
+.footer-logo{
+    width: 80px;
+    margin: auto;
+}
+.footer-logo img{
+    width: 100%;
+    height: auto;
+}
+.links{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+footer a{
+    padding: 8px 12px;
+    text-decoration: none;
+    color:white;
+    opacity: .5;
+    display: block;
+    text-align: center;
+    font-size: 12px;
+}
+footer a:hover{
+    cursor: pointer;
+    opacity: 1;
+}
+footer p{
+    font-size: 12px;
+    text-align: center;
+}
+/* le bouton qui apparait en bas de page sur mobile */
+.bottom-button{
+    position: fixed;
+    bottom:0;
+    width: 100%;
+    padding: 20px 0;
+    background-color: black;
+    opacity:0;
+    display: none;
+    transition: bottom 1s;
+    -webkit-transition: bottom 1s;
+    -moz-transition: bottom 1s;
+    -ms-transition: bottom 1s;
+    -o-transition: bottom 1s;
+}
+.bottom-button button {
+    opacity: .7;
+    display: block;
+    height: 2.8em;
+    color: white;
+    border:none;
+    border-radius: 3px;
+    font-size: 14px;
+    background-color: #0072d2;
+    padding: 5px 15px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    transition: opacity 1s;
+    margin: auto;
+    -webkit-transition: opacity 1s;
+    -moz-transition: opacity 1s;
+    -ms-transition: opacity 1s;
+    -o-transition: opacity 1s;
+}
+.bottom-button button:hover{
+    background-color:#1c86dd;
+    cursor: pointer;
+}
+
+/* le responsive du site */
+@media screen and (max-width: 768px){
+    header{
+        background-image: url('./assets/olp_hero_mobile_UKI_FR.jpg');
+        background-repeat: no-repeat;
+    }
+
+    #first-btn{
+        background-color: transparent;
+        border:none;
+    }
+    #top-btn{
+        margin-bottom: 200px;
+    }
+    #logo{
+       
+        margin:auto;
+        padding-top: 210px;
+    }
+
+    h1{
+        text-align: center;
+    }
+    #top{
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        margin-left:0
+    }
+
+    #top h3, #top p{
+        text-align: center;
+    }
+
+    #top button{
+        display: block;
+        margin:auto;
+    }
+    .separator{
+        display:block;
+        width:58%;
+        margin: auto;
+        margin-top: 20px;
+            }
+    #condition{
+        width: 100%;
+    }
+    #logos{
+        background-image: none;
+    }
+
+#logos a{
+    margin: auto;
+}
+.dual{
+    flex-direction: column;
+}
+.dual:nth-child(even){
+    flex-direction:  column-reverse;
+}
+.dual div{
+    width: 100%;
+}
+.column h2{
+    font-size: 26px;
+}
+.column p{
+    font-size: 16px;
+}
+
+.media{
+    width: 48%;
+}
+#hidden-btn{
+    opacity: 0;
+}
+.bottom-button{
+    bottom: 0;
+    display: block;
+}
 }

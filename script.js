@@ -1,6 +1,16 @@
 //scroll en cliquant sur le boutton 'V'
-function scrolFunc(){window.scroll({left:0, top:650, behavior: "smooth"})};
-document.getElementById("down").addEventListener('click', scrolFunc );
+function scrolFunc1(){window.scroll({left:0, top:1050, behavior: "smooth"})};
+function scrolFunc2(){window.scroll({left:0, top:500, behavior: "smooth"})};
+if(window.matchMedia("(max-width: 768px)").matches){
+    
+    document.getElementById("down").addEventListener('click', scrolFunc1 );
+    
+} else if ((window.matchMedia("(min-width: 769px)").matches)){
+    
+    document.getElementById("down").addEventListener('click', scrolFunc2 );
+}
+
+
 
 //faire apparaitre la navbar en scrollant
 window.onscroll = ()=>{if( document.documentElement.scrollTop >350 ){
@@ -8,23 +18,25 @@ window.onscroll = ()=>{if( document.documentElement.scrollTop >350 ){
     document.querySelector('.hidden').style.display = "block";
     document.getElementById('hidden-btn').style.display = "block";
     document.getElementById('top-btn').style.backgroundColor = "#040714";
-   
-    
     } else{
-        
-        
         document.getElementById('hidden-btn').style.display = "none";
-    document.getElementById('top-btn').style.backgroundColor = "transparent";
-    document.querySelector('.hidden').style.display = "none";
-        
-        
-       
+        document.getElementById('top-btn').style.backgroundColor = "transparent";
+        document.querySelector('.hidden').style.display = "none";
     }
 }
-// window.onscroll = ()=>{if( document.documentElement.scrollTop < 350 ){
-    
-//     document.querySelector('.hidden').classList.remove('visibl');
-//     document.getElementById('hidden-btn').setAttribute('hidden');
-//     document.getElementById('top-btn').classList.remove('bg-nav');
-//     }
-// }
+
+
+
+//faire apparaitre le bouton en bas en scrollant
+let maDiv = document.getElementById("bottom-div");
+
+var myScrollFunc = function() {
+  var y = window.scrollY;
+  if (y > 800) {
+    maDiv.style.opacity = ".8"
+  } else {
+    maDiv.style.opacity = "0"
+  }
+};
+
+window.addEventListener("scroll", myScrollFunc);
