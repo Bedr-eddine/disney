@@ -69,6 +69,9 @@ header{
     width: 100%;
     
 }
+a{
+    text-decoration: none;
+}
 /* style du logo et bouton qui apparaissent en scrollant */
 .hidden {
     width: 7em;
@@ -102,9 +105,12 @@ header{
     -moz-border-radius: 3px;
     -ms-border-radius: 3px;
     -o-border-radius: 3px;
-    
     transition: opacity 1s;
     display: none;
+    -webkit-transition: opacity 1s;
+    -moz-transition: opacity 1s;
+    -ms-transition: opacity 1s;
+    -o-transition: opacity 1s;
 }
 #hidden-btn:hover{
     background-color:#1c86dd;

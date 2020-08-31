@@ -31,7 +31,7 @@ window.onscroll = ()=>{if( document.documentElement.scrollTop >350 ){
 let maDiv = document.getElementById("bottom-div");
 
 var myScrollFunc = function() {
-  var y = window.scrollY;
+  let y = window.scrollY;
   if (y > 800) {
     maDiv.style.opacity = ".8"
   } else {
